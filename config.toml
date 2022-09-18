@@ -1,0 +1,10 @@
+[extension]
+name = "OpenSeeFace"
+translation-key = "OPEN_SEE_FACE_EXTENSION_NAME"
+
+[[resources]]
+name = "open_see_face"
+translation-key = "OPEN_SEE_FACE_EXTENSION_NAME"
+tags = ["tracker"]
+entrypoint = "open_see_face.gd"
+gui = "gui.gd"

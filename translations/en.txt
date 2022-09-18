@@ -1,3 +1,5 @@
+OPEN_SEE_FACE_EXTENSION_NAME="OpenSeeFace"
+
 OPENSEEFACE_USAGE_LABEL="1. Select the camera to be used for tracking
 2. Set the FPS to track at (higher is better but is more CPU intensive)
 3. Select the tracking model to be used
