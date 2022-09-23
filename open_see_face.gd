@@ -148,6 +148,7 @@ class OSFData:
 			points_3d.set(point_idx, _read_vector3(spb, i))
 	
 		# TODO im pretty sure this is kind of wrong
+		# TODO 23/09/2022 - The x and y values are flipped here but I don't know why
 		right_gaze = Quat(Transform().looking_at(points_3d[66] - points_3d[68], Vector3.UP).basis).normalized()
 		left_gaze = Quat(Transform().looking_at(points_3d[67] - points_3d[69], Vector3.UP).basis).normalized()
 	
@@ -406,8 +407,19 @@ func apply(data: InterpolationData, _model: PuppetTrait) -> void:
 	data.bone_translation.target_value = stored_offsets.translation_offset - osf_data.translation
 	data.bone_rotation.target_value = stored_offsets.rotation_offset - osf_data.rotation
 
+	# TODO normalize bad x/y values, something is wrong with my conversion
 	data.left_gaze.target_value = stored_offsets.left_eye_gaze_offset - osf_data.left_gaze.get_euler()
+	data.left_gaze.target_value = Vector3(
+		data.left_gaze.target_value.y,
+		data.left_gaze.target_value.x,
+		data.left_gaze.target_value.z
+	)
 	data.right_gaze.target_value = stored_offsets.right_eye_gaze_offset - osf_data.right_gaze.get_euler()
+	data.right_gaze.target_value = Vector3(
+		data.right_gaze.target_value.y,
+		data.right_gaze.target_value.x,
+		data.right_gaze.target_value.z
+	)
 
 	data.left_blink.target_value = osf_data.left_eye_open
 	data.right_blink.target_value = osf_data.right_eye_open
