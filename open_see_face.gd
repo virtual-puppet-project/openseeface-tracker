@@ -409,17 +409,7 @@ func apply(data: InterpolationData, _model: PuppetTrait) -> void:
 
 	# TODO normalize bad x/y values, something is wrong with my conversion
 	data.left_gaze.target_value = stored_offsets.left_eye_gaze_offset - osf_data.left_gaze.get_euler()
-	data.left_gaze.target_value = Vector3(
-		data.left_gaze.target_value.y,
-		data.left_gaze.target_value.x,
-		data.left_gaze.target_value.z
-	)
 	data.right_gaze.target_value = stored_offsets.right_eye_gaze_offset - osf_data.right_gaze.get_euler()
-	data.right_gaze.target_value = Vector3(
-		data.right_gaze.target_value.y,
-		data.right_gaze.target_value.x,
-		data.right_gaze.target_value.z
-	)
 
 	data.left_blink.target_value = osf_data.left_eye_open
 	data.right_blink.target_value = osf_data.right_eye_open
