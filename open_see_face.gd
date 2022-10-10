@@ -270,7 +270,7 @@ func _start_tracker() -> bool:
 	var context_path: String = res.unwrap()
 
 	var pid: int = OS.execute(
-		"%s/OpenSeeFaceFolder/OpenSeeFace/facetracker%s" % [
+		"%s/OpenSeeFace/facetracker%s" % [
 			context_path,
 			".exe" if OS.get_name().to_lower() == "windows" else ""
 		],

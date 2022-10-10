@@ -89,7 +89,7 @@ func _camera_select() -> OptionButton:
 	var output := []
 	match os_name:
 		"windows":
-			var exe_path: String = "%s/OpenSeeFaceFolder/OpenSeeFace/facetracker.exe" % \
+			var exe_path: String = "%s/OpenSeeFace/facetracker.exe" % \
 					AM.em.get_extension("OpenSeeFace").expect("Unable to get context").context
 			OS.execute(exe_path, ["-l", "1"], true, output)
 		"osx", "x11":

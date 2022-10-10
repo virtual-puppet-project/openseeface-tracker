@@ -3,17 +3,10 @@ An [OpenSeeFace](https://github.com/emilianavt/OpenSeeFace) tracker for [vpuppr]
 
 ## Setup
 
-### Windows
+1. Ensure the Python module `requests` is installed (`pip install requests` to install globally)
+2. Run `python3 setup.py setup --export`
 
-1. Download the latest [OpenSeeFace release](https://github.com/emilianavt/OpenSeeFace/releases)
-2. Copy everything in the download's `Binary` directory to this repo's `OpenSeeFaceFolder/OpenSeeFace` folder
-3. Copy everything in the download's `models` directory to this repo's `OpenSeeFaceFolder/models` folder
-
-### Linux
-
-TBD but the setup is very similar to the instructions for Windows
-
-## Generating a PyInstaller binary
+## Manually generating a PyInstaller binary
 
 This is a manual setup step that can be performed for OpenSeeFace.
 
